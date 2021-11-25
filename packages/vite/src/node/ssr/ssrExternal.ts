@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
-import { tryNodeResolve, InternalResolveOptions } from '../plugins/resolve'
+import type { InternalResolveOptions } from '../plugins/resolve'
+import { tryNodeResolve } from '../plugins/resolve'
 import {
   createDebugger,
   isDefined,
@@ -8,7 +9,7 @@ import {
   normalizePath,
   resolveFrom
 } from '../utils'
-import { ResolvedConfig } from '..'
+import type { ResolvedConfig } from '..'
 import { createFilter } from '@rollup/pluginutils'
 
 const debug = createDebugger('vite:ssr-external')

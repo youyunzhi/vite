@@ -5,7 +5,7 @@ declare module '@vue/compiler-sfc' {
   }
 }
 
-import * as _compiler from '@vue/compiler-sfc'
+import type * as _compiler from '@vue/compiler-sfc'
 
 export let compiler: typeof _compiler
 

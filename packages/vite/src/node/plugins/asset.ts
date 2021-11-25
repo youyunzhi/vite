@@ -2,11 +2,11 @@ import path from 'path'
 import { parse as parseUrl } from 'url'
 import fs, { promises as fsp } from 'fs'
 import mime from 'mime/lite'
-import { Plugin } from '../plugin'
-import { ResolvedConfig } from '../config'
+import type { Plugin } from '../plugin'
+import type { ResolvedConfig } from '../config'
 import { cleanUrl } from '../utils'
 import { FS_PREFIX } from '../constants'
-import { OutputOptions, PluginContext, RenderedChunk } from 'rollup'
+import type { OutputOptions, PluginContext, RenderedChunk } from 'rollup'
 import MagicString from 'magic-string'
 import { createHash } from 'crypto'
 import { normalizePath } from '../utils'
@@ -98,11 +98,7 @@ export function assetPlugin(config: ResolvedConfig): Plugin {
         const file = getAssetFilename(hash, config) || this.getFileName(hash)
         registerAssetToChunk(chunk, file)
         const outputFilepath = config.base + file + postfix
-        s.overwrite(
-          match.index,
-          match.index + full.length,
-          outputFilepath
-        )
+        s.overwrite(match.index, match.index + full.length, outputFilepath)
       }
 
       if (s) {

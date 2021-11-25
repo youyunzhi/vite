@@ -2,8 +2,8 @@ import fs from 'fs'
 import path from 'path'
 import slash from 'slash'
 import hash from 'hash-sum'
-import { CompilerError, SFCDescriptor } from '@vue/compiler-sfc'
-import { ResolvedOptions } from '..'
+import type { CompilerError, SFCDescriptor } from '@vue/compiler-sfc'
+import type { ResolvedOptions } from '..'
 import { compiler } from '../compiler'
 
 // node_modules/@vue/compiler-sfc/dist/compiler-sfc.d.ts SFCParseResult should be exported so it can be re-used
